@@ -11,6 +11,11 @@ The project now demonstrates Rust variable bindings:
 - Immutable and mutable bindings help make changes to program state explicit.
 
 - Signed and unsigned variables 
+    why do we use signed and unsigned variables?
+    -> because, to avoid any bugs during bitwise operation 
+    signed i8 have range from -128 to 127
+    unsigned u8 have range from 0 to 255
+     
     integers type
     i8          u8
     i16         u16

@@ -1,9 +1,8 @@
-fn show_song(title: &str, artist:&str){
-    println!("Now playing:{}", title);
-    println!("Artist:{}", artist);
+fn calculate_rem(total: u32, elapsed:u32) -> u32{
+    total - elapsed
 }
 
 fn main(){
-    show_song("Desi Girl", "shararat");
-    show_song("shankar-ehesaan-loy", "someone-idk");
+    let rem = calculate_rem(240, 90);
+    println!("remaining: {}s", rem);
 }
