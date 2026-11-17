@@ -1,5 +1,7 @@
 fn calculate_rem(total: u32, elapsed:u32) -> u32{
-    total - elapsed
+    total - elapsed 
+    // no ";" because its an expression it becomes the return value of the function
+    // if you add ":" it becomes a statement
 }
 
 fn main(){
