@@ -1,5 +1,5 @@
 fn main() {
-    let volum = 50;
+    let mut volum = 50;
 
     volum = 80;
 
