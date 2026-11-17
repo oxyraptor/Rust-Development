@@ -1,1 +1,10 @@
+<<<<<<< HEAD
 /target
+=======
+# Rust build artifacts
+/target/
+**/target/
+
+# Local editor settings
+.vscode/
+>>>>>>> 2c76356 (Add snake and termix Rust projects)
