@@ -1,7 +1,7 @@
 fn main() {
-    let song = "Desi Girl";
-    let artist = "Shankar-Ehsaan-Loy";
+    let volum = 50;
 
-    println!("song: {}", song);
-    println!("Artist:{}", artist);
+    volum = 80;
+
+    println!("Volume:{}", volum);
 }
