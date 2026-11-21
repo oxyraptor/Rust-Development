@@ -12,3 +12,12 @@ its exhastive meaning it matches or handel every single possible varians of an e
 borrowing &
 ownership is the most imp concept of rust 
 it borrows the values 
+
+grid system or adding grid to our window 
+ive impliment or divide the window into grids though it drawn like they are just lines 
+but they are important for future use
+as we have to move the snake and randomly spawn the apple the grid is use full
+
+to move the snake i figureout that i have to trace the path of the snake in a while loop and draw the sqaures from precious cordinateds to current cordinates after covering each bolck or cell of the grid 
+
+rust is hard mf!!
