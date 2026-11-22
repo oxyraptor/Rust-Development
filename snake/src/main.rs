@@ -4,7 +4,7 @@ const ROWS: usize = 30;
 
 #[macroquad::main("SnakeGame")]
 async fn main() {
-    let mut snake = vec![1, 2];
+    let mut snake = vec![(1, 4), (1, 5)];
     let mut apple = (1, 1);
     enum Dirt {
         Up,
@@ -13,14 +13,10 @@ async fn main() {
         Right,
     }
 
-    const CELL_SIZE: f32 = 20.0;
-
     let mut score: u16 = 0;
 
     loop {
         clear_background(DARKBROWN);
-        draw_rectangle(240.0, 300.0, 20.0, 20.0, RED);
-        draw_rectangle(25.0, 60.0, 20.0, 20.0, GREEN);
 
         let cell_size = (screen_width() / COLS as f32).min(screen_height() / ROWS as f32);
         let grid_w = cell_size * COLS as f32;
@@ -42,6 +38,22 @@ async fn main() {
             draw_line(offset_x, y, offset_x + grid_w, y, 1.0, GRAY);
         }
         draw_text("Score : 0", 20.0, 40.0, 30.0, BLACK);
+        draw_rectangle(
+            offset_x + apple.0 as f32 * cell_size,
+            offset_y + apple.1 as f32 * cell_size,
+            20.0,
+            20.0,
+            GREEN,
+        );
+        for seg in &snake {
+            draw_rectangle(
+                offset_x + seg.0 as f32 * cell_size,
+                offset_y + seg.1 as f32 * cell_size,
+                20.0,
+                20.0,
+                RED,
+            );
+        }
 
         next_frame().await
     }
