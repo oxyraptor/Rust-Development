@@ -21,3 +21,12 @@ as we have to move the snake and randomly spawn the apple the grid is use full
 to move the snake i figureout that i have to trace the path of the snake in a while loop and draw the sqaures from precious cordinateds to current cordinates after covering each bolck or cell of the grid 
 
 rust is hard mf!!
+
+connected data to the grid 
+data like snake apple and score 
+added the draw_rectangle in a loop and replaced the hardcoded numbers
+
+turned snake into a list of tuple in a vector
+
+snaped apple and snake to grid using offset x and y
+
