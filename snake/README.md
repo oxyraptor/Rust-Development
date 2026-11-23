@@ -30,3 +30,16 @@ turned snake into a list of tuple in a vector
 
 snaped apple and snake to grid using offset x and y
 
+got it made the snake move 
+lesss gooo bc
+
+thank god to all that DSA problems ive solved 
+i can finally use the push and pop somewhere
+
+now i just have to figure out how to steer the snake and make the apple swapn randomly 
+
+if possible i might add wasd to steer snake 
+ig that's it for today
+man im so bad it took me 5 days to move the sanke which i cant even controll for now 
+
+
