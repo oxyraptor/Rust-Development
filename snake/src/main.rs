@@ -23,10 +23,9 @@ async fn main() {
             }
         }
     }
-    pub enum Command {
-        Quit,
-        Turn(Dirt),
-    }
+    let mut dir = Dirt::Right;
+    let mut last_updated = get_time();
+    let mut speed: f64 = 0.15;
 
     let mut score: u16 = 0;
 
@@ -70,20 +69,33 @@ async fn main() {
             );
         }
 
-        KeyCode::Up) {
-            Some(Command::Turn(Dirt::Up))
+        if is_key_pressed(KeyCode::Up) {
+            if (dir != Dirt::Up.opposite()) {}
         }
         if is_key_pressed(KeyCode::Down) {
-            Some(Command::Turn(Dirt::Down));
+            if (dir != Dirt::Up.opposite()) {}
         }
         if is_key_pressed(KeyCode::Left) {
-            Some(Command::Turn(Dirt::Left));
+            if (dir != Dirt::Up.opposite()) {}
         }
         if is_key_pressed(KeyCode::Right) {
-            Some(Command::Turn(Dirt::Right));
+            if (dir != Dirt::Up.opposite()) {}
         }
         if is_key_pressed(KeyCode::Escape) {
             break;
+        }
+
+        if get_time() - last_updated > speed{
+            last_updated = get_time();
+            let mut new_head = snake[0];
+            match dir {
+                Dirt::Up => new_head.1-=1,
+                Dirt::Down => new_head.1+=1,
+                Dirt::Left => new_head.0-=1,
+                Dirt::Right => new_head.0+=1,              
+            }
+            snake.insert(0, new_head);
+            snake.pop();
         }
 
         next_frame().await
