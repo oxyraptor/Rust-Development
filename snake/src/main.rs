@@ -6,11 +6,26 @@ const ROWS: usize = 30;
 async fn main() {
     let mut snake = vec![(1, 4), (1, 5)];
     let mut apple = (1, 1);
+    #[derive(Debug, Copy, Clone, Eq, PartialEq)]
     enum Dirt {
         Up,
         Down,
         Left,
         Right,
+    }
+    impl Dirt {
+        pub fn opposite(&self) -> Self {
+            match self {
+                Self::Up => Self::Down,
+                Self::Right => Self::Left,
+                Self::Down => Self::Up,
+                Self::Left => Self::Right,
+            }
+        }
+    }
+    pub enum Command {
+        Quit,
+        Turn(Dirt),
     }
 
     let mut score: u16 = 0;
@@ -53,6 +68,22 @@ async fn main() {
                 20.0,
                 RED,
             );
+        }
+
+        KeyCode::Up) {
+            Some(Command::Turn(Dirt::Up))
+        }
+        if is_key_pressed(KeyCode::Down) {
+            Some(Command::Turn(Dirt::Down));
+        }
+        if is_key_pressed(KeyCode::Left) {
+            Some(Command::Turn(Dirt::Left));
+        }
+        if is_key_pressed(KeyCode::Right) {
+            Some(Command::Turn(Dirt::Right));
+        }
+        if is_key_pressed(KeyCode::Escape) {
+            break;
         }
 
         next_frame().await
