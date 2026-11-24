@@ -42,4 +42,23 @@ if possible i might add wasd to steer snake
 ig that's it for today
 man im so bad it took me 5 days to move the sanke which i cant even controll for now 
 
+finally the game is completed 
+today i added game state like game over and collision
+and when the snake hit the other wall it will reappear from the opposite wall
+and when the snake collide with itself the game will be over
+the apple spawn randomly 
+it uses queue for inputs to avoid reverse bug(if i press up and down before the clock ticks the snake will go reverse )
+
+what i learned??
+-> i learned the basics of rust like variable decleartion, loops, for loop, if else, integer, bool, float, vec, enum, etc
+
+the most imp thing i learned is that how important the docs are like the docs and opensource projects helped me undertand rust 
+
+well this journey was truly worth it, it helped me build confidance and now i think i can do better in rust or coding overall
+
+ik no one is going to read this 
+
+anyway more projects are on the way
+
+i made apple green and snake read damn?!
 
