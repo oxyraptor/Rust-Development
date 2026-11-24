@@ -70,29 +70,37 @@ async fn main() {
         }
 
         if is_key_pressed(KeyCode::Up) {
-            if (dir != Dirt::Up.opposite()) {}
+            if (dir != Dirt::Up.opposite()) {
+                dir = Dirt::Up;
+            }
         }
         if is_key_pressed(KeyCode::Down) {
-            if (dir != Dirt::Up.opposite()) {}
+            if (dir != Dirt::Down.opposite()) {
+                dir = Dirt::Down;
+            }
         }
         if is_key_pressed(KeyCode::Left) {
-            if (dir != Dirt::Up.opposite()) {}
+            if (dir != Dirt::Left.opposite()) {
+                dir = Dirt::Left;
+            }
         }
         if is_key_pressed(KeyCode::Right) {
-            if (dir != Dirt::Up.opposite()) {}
+            if (dir != Dirt::Right.opposite()) {
+                dir = Dirt::Right;
+            }
         }
         if is_key_pressed(KeyCode::Escape) {
             break;
         }
 
-        if get_time() - last_updated > speed{
+        if get_time() - last_updated > speed {
             last_updated = get_time();
             let mut new_head = snake[0];
             match dir {
-                Dirt::Up => new_head.1-=1,
-                Dirt::Down => new_head.1+=1,
-                Dirt::Left => new_head.0-=1,
-                Dirt::Right => new_head.0+=1,              
+                Dirt::Up => new_head.1 -= 1,
+                Dirt::Down => new_head.1 += 1,
+                Dirt::Left => new_head.0 -= 1,
+                Dirt::Right => new_head.0 += 1,
             }
             snake.insert(0, new_head);
             snake.pop();
