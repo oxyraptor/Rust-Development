@@ -60,5 +60,5 @@ ik no one is going to read this
 
 anyway more projects are on the way
 
-i made apple green and snake read damn?!
+i made apple green and snake red damn?!
 
