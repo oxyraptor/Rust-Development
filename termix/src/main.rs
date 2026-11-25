@@ -1,10 +1,13 @@
-fn calculate_rem(total: u32, elapsed:u32) -> u32{
-    total - elapsed 
-    // no ";" because its an expression it becomes the return value of the function
-    // if you add ":" it becomes a statement
-}
+use std::env;
+use std::error::Error;
+use std::fs::File;
+use std::io;
 
-fn main(){
-    let rem = calculate_rem(240, 90);
-    println!("remaining: {}s", rem);
+fn main() -> Result<(), Box<dyn Error>> {
+    let path = env::args()
+        .nth(1)
+        .ok_or("Usage: cargo run -- <file_path>")?;
+    let _file = File::open(&path)?;
+
+    Ok(())
 }
