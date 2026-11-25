@@ -2,6 +2,7 @@ use rodio::{Decoder, MixerDeviceSink, source::Source};
 use std::error::Error;
 use std::fs::File;
 use std::{env, io::BufReader};
+mod metedata;
 
 fn main() -> Result<(), Box<dyn Error>> {
     let path = env::args()
