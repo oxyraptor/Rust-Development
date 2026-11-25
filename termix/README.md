@@ -40,7 +40,7 @@ The project now demonstrates Rust variable bindings:
 
     compound type
     group multiple values
-
+'''
     tuple
     let song_info =" ("Desi Girl","SEL", 4.34);
 
@@ -71,26 +71,30 @@ Function:
     fn show_song(title)
 
 Memory
-## Current Features
+'''
 
-- Music playback status output
-- Album artwork support planned
-- Playlist management planned
+finally listen to o rangrez thrugh rust code
 
-## Run
+using : cargo run --release -- "Songs/O Rangrez.mp3"
 
-```bash
-cargo run
-```
+had to cross complied the code for windows as i was using wsl and made the program run natively on windows from wsl
 
-## Development
+commands for this are
+sudo apt update
+sudo apt install -y mingw-w64
 
-Build the project with:
+rustup target add x86_64-pc-windows-gnu
 
-```bash
-cargo build
-```
+
+./target/x86_64-pc-windows-gnu/release/termix.exe "$(wslpath -w 'Songs/O Rangrez.mp3')"
+
+
+i had to do this because i was getting some disturbance while playing from wsl because of wsl audio bridge so for now i ran the program natively 
+will fix this soon 
+
 
 ## Author
 
 Oxyraptor
+
+
