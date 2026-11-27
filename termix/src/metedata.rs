@@ -16,7 +16,7 @@ impl TrackInfo {
     pub fn from_path(path: &Path) -> Result<Self, Box<dyn Error>> {
         let tagged_file = read_from_path(path)?;
         let duration = tagged_file.properties().duration();
-        let tag = tagged_file.primary_tag();
+        let tag = tagged_file.primary_tag().or_else(|| tagged_file.first_tag());
 
         
         

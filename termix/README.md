@@ -93,6 +93,12 @@ i had to do this because i was getting some disturbance while playing from wsl b
 will fix this soon 
 
 
+to play the song 
+
+cd termix and
+ ./target/x86_64-pc-windows-gnu/release/termix.exe "$(wslpath -w 'Songs/O Rangrez.mp3')"
+
+
 ## Author
 
 Oxyraptor
